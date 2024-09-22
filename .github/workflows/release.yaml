@@ -36,4 +36,4 @@ jobs:
         
       - name: Show Wheel
         shell: bash
-        run: cat dist
+        run: ls dist
