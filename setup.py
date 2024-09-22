@@ -1,11 +1,14 @@
+import json
 from setuptools import find_packages, setup
 
 with open('README.md') as f:
   long_description = f.read()
 
+with open('pi-package.json') as pkg:
+  packageFields = json.loads(pkg.read())
+
 setup(
-    name='ai-api-plugin',
-    version='2024.9.21',
+    **packageFields,
     long_description=long_description,
     long_description_content_type="text/markdown",
     license="MIT",
