@@ -22,10 +22,8 @@ jobs:
         with:
           python-version: '3.11.9' 
 
-      - name: Install dependencies
-        uses: VaultVulp/action-pipenv@v2.0.1
-        with:
-          command: install -d 
+      - name: Install Python, pipenv and Pipfile packages
+        uses: kojoru/prepare-pipenv@v1
 
       - name: Unit Test
         shell: bash
