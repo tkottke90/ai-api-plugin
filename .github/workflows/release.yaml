@@ -13,11 +13,6 @@ jobs:
     runs-on: [ ubuntu-latest ]
     steps:
 
-      - name: 'Check Ref'
-        if: github.ref != '/refs/heads/main'
-        shell: bash
-        run: echo "ERROR ! Workflow can only be run on main" && exit 1
-
       # https://github.com/marketplace/actions/checkout
       - name: 'Checkout Repository'
         uses: actions/checkout@v4
