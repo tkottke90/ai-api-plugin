@@ -47,5 +47,6 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         with:
           make_latest: true
+          generate_release_notes: true
           files: |
             'dist/**'
