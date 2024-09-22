@@ -15,7 +15,8 @@ setup(
     url='',
     author='Thomas Kottke',
     author_email='t.kottke90@gmail.com',
-    packages=find_packages(),
+    package_dir={'': 'lib'},
+    packages=find_packages(where='lib'),
     python_requires=">=3.11.9",
     install_requires=[
       'pluggy==1.5.0'

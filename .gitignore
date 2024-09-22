@@ -1,4 +1,4 @@
 ai-api-venv/
 build
 dist
-ai_api_plugin*
+./ai_api_plugin*
