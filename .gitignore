@@ -1,0 +1,4 @@
+ai-api-venv/
+build
+dist
+ai_api_plugin*

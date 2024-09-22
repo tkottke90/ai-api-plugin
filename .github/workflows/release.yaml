@@ -1,0 +1,41 @@
+
+on: 
+  push:
+    # tags: 
+    #   - 'v20[0-9][0-9].[0-9][0-9].[0-9][0-9]'
+    branches: 
+      - main
+
+jobs:
+  build-and-release:
+    name: Build And Release
+    runs-on: [ ubuntu-latest ]
+    steps:
+
+      # https://github.com/marketplace/actions/checkout
+      - name: 'Checkout Repository'
+        uses: actions/checkout@v4
+
+      # https://github.com/marketplace/actions/setup-python
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11.9' 
+
+      - name: Install dependencies
+        uses: VaultVulp/action-pipenv@v2.0.1
+        with:
+          command: install -d 
+
+      - name: Unit Test
+        shell: bash
+        run: echo "TODO Add Unit Tests"
+
+        
+      - name: Build Wheel
+        shell: bash
+        run: python setup.py bdist_wheel 
+        
+      - name: Show Wheel
+        shell: bash
+        run: cat dist
